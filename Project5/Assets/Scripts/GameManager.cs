@@ -52,6 +52,10 @@ public class GameManager : MonoBehaviour
     public void ReduceLife()
     {
         Lives -= 1;
+        if (Lives < 0)
+        {
+            Lives = 0;
+        }
         LifeText.text = "Lives : " + Lives;
         if (Lives <= 0)
             GameOver();
